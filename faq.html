@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | MTINDO Educational Solutions</title>
+<meta name="description" content="Frequently Asked Questions about MTINDO Educational Solutions. Get answers to common questions about our programmes, services and registration.">
+<link rel="icon" href="gg/WhatsApp_Image_2026-08-14_at_6.19.38_PM__1_-removebg-preview (1).png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0E2A54;
+    --navy-deep: #081b3a;
+    --red: #C4262E;
+    --gold: #E3A92C;
+    --paper: #F6F3EC;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A46;
+    --line: rgba(14,42,84,0.14);
+    --radius: 4px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3{ font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); }
+  a{ color: inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow{
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .eyebrow::before{ content:""; width: 26px; height: 2px; background: var(--gold); display:inline-block; }
+  
+  .nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
+  }
+  .nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 66px;
+  }
+  .nav-brand{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    color: #fff;
+    font-size: 1.15rem;
+  }
+  .brand-logo{
+    width: 36px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  .nav-brand span{ color: var(--gold); }
+  .nav-links{
+    display:flex;
+    gap:20px;
+    align-items:center;
+  }
+  .nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover{ color: var(--gold); }
+  .nav-cta{
+    background: var(--red);
+    color: #fff !important;
+    font-family:'Space Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .nav-cta:hover{ background: #a11e25; }
+
+  section{ padding: 88px 0; }
+  .section-head{ max-width: 640px; margin-bottom: 48px; }
+  .section-head h2{
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-top: 14px;
+  }
+
+  .hero-sub{
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 56px 0;
+  }
+  .hero-sub h1{
+    color: #fff;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+
+  .faq-category{
+    margin-bottom: 56px;
+  }
+  .faq-category-title{
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .faq-item{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .faq-question{
+    padding: 20px;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: #f9f8f5;
+    transition: background 0.15s ease;
+  }
+  .faq-item.active .faq-question{
+    background: var(--navy);
+  }
+  .faq-question:hover{
+    background: #efefef;
+  }
+  .faq-item.active .faq-question:hover{
+    background: var(--navy-deep);
+  }
+
+  .faq-q-text{
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.98rem;
+  }
+  .faq-item.active .faq-q-text{
+    color: #fff;
+  }
+
+  .faq-toggle{
+    width: 24px;
+    height: 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .faq-item.active .faq-toggle{
+    background: #fff;
+    color: var(--navy);
+  }
+
+  .faq-answer{
+    display: none;
+    padding: 20px;
+    color: var(--ink-soft);
+    background: #fff;
+    border-top: 1px solid var(--line);
+    line-height: 1.8;
+  }
+  .faq-item.active .faq-answer{
+    display: block;
+  }
+
+  footer{
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.55);
+    padding: 30px 0;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .wa-float{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25D366;
+    color: #fff;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    text-decoration:none;
+    z-index: 60;
+    transition: transform 0.15s ease;
+  }
+  .wa-float:hover{ transform: scale(1.08); }
+  .wa-float svg{ width: 28px; height: 28px; fill: #fff; }
+
+  @media (max-width: 860px){
+    .nav-links{ gap: 12px; font-size: 0.9rem; }
+  }
+  /* ---------- HAMBURGER MENU ---------- */
+  .hamburger-btn{
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 51;
+  }
+  .hamburger-btn:focus{ outline: none; }
+
+  .menu-overlay{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 48;
+  }
+  .menu-overlay.active{ display: block; }
+
+  .mobile-nav{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    padding-top: 80px;
+    overflow-y: auto;
+    z-index: 49;
+    transition: left 0.3s ease;
+  }
+  .mobile-nav.active{ left: 0; }
+  .mobile-nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.95rem;
+    transition: background 0.15s ease;
+    display: block;
+  }
+  .mobile-nav a:hover{ background: rgba(255,255,255,0.15); }
+  .mobile-nav .nav-cta{
+    background: var(--red);
+    margin: 16px 28px;
+    border: none;
+    padding: 12px 18px;
+    border-radius: var(--radius);
+  }
+
+  @media (max-width: 860px){
+    .hamburger-btn{ display: block; }
+    .nav-links{ display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img class="brand-logo" src="gg/WhatsApp_Image_2026-08-14_at_6.19.38_PM__1_-removebg-preview (1).png" alt="MTINDO logo">MTINDO<span>.</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="programmes.html">Programmes</a>
+  <a href="contact.html" class="nav-cta">Contact</a>
+</div>
+
+<div class="hero-sub">
+  <div class="wrap">
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about MTINDO, our programmes, services and how to register.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="faq-category">
+      <div class="faq-category-title">About MTINDO</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What is MTINDO Educational Solutions?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>MTINDO is an education-focused organisation that provides innovative, practical and reliable solutions to learners, teachers, schools and education stakeholders. We specialize in academic seminars, teacher training, examinations, educational consultancy, competitions, digital learning and scholastic materials. Our mission is to bridge gaps in teaching and learning and enhance academic excellence.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What does "WE ARE THE REMEDY" mean?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>"We Are The Remedy" is MTINDO's motto, reflecting our commitment to providing solutions to the missing links in the corridor of excellence. We believe that every educational challenge has a practical solution, and MTINDO is here to provide those solutions to learners, teachers and schools.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">How long has MTINDO been operating?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>MTINDO was established to respond to educational challenges faced by learners, teachers and schools. We have worked with multiple schools across Uganda and continue to expand our reach and services to serve more educational stakeholders.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">Our Services</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What services does MTINDO offer?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>MTINDO offers a wide range of educational services including: Educational Seminars, Teacher Training & Professional Development, School Consultancy, Examinations & Assessment, General Paper & Research Programmes, English Language & Literature support, Online Learning, Scholastic Materials, Academic Competitions, Debate & Public Speaking, Co-curricular programmes, Practical Learning, and Career Guidance. Visit our Services page for detailed information about each offering.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Can MTINDO customize programmes for my school?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! MTINDO specializes in providing customized educational solutions for schools. Schools can contact us to discuss their specific needs, challenges and academic goals. We will design programmes tailored to your school's curriculum and student requirements. Contact us via WhatsApp or phone to discuss your school's needs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Does MTINDO provide online learning programmes?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! MTINDO Online School provides opportunities for learners to access lessons, revision classes, holiday learning programmes, and examination preparation beyond their physical classrooms. Online programmes can be tailored to different subjects and academic levels depending on what suits your needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">Programmes & Registration</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Who can participate in MTINDO programmes?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>MTINDO programmes are designed for a wide range of participants including Primary learners, O-Level and A-Level students, Primary and Secondary teachers, School administrators, and Parents seeking educational support for their children. Each programme specifies its target group. If you're unsure whether a programme is suitable for you, contact us.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">How do I register for a MTINDO programme?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Registration is easy! You can register through: (1) WhatsApp - Chat with us at 0785 492591 with your name, school, programme interest and contact details; (2) Phone - Call 0785 492591 or 0704 677414; (3) Email - Send your details to mtindoedusol@gmail.com; (4) Contact Form - Fill out the form on our Contact page. We'll guide you through the registration process and payment details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What are the registration deadlines for programmes?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Each MTINDO programme has its own registration deadline, usually 3-7 days before the event. Specific deadlines are listed on each programme's details page. Early registration is recommended as many programmes have limited spots. Contact us for late registration inquiries.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Can a school invite MTINDO for a customized seminar?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! Schools can invite MTINDO to organize customized seminars, training workshops, competitions or other educational programmes suited to their academic calendar and specific needs. Contact us to discuss the details, dates, subjects and arrangements. We'll work with you to deliver a high-quality programme for your learners and teachers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">Teachers & Professional Development</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Does MTINDO offer training for teachers?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! MTINDO provides comprehensive professional development programmes for teachers. Training areas include CBC Implementation, Assessment and assessment item writing, Continuous assessment, Teaching methodologies, Classroom management, English Language teaching, Literature teaching, Research methodology, Educational technology, and Scheme of work preparation. Teachers can join public workshops or schools can arrange in-house training.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Can teachers join MTINDO programmes individually?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Teachers can participate as individuals in MTINDO seminars and training programmes. Additionally, schools can arrange group participation for their teaching staff. Contact us to inquire about upcoming teacher training events or to arrange a customized workshop for your school.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">Payments & Fees</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What are the fees for MTINDO programmes?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>MTINDO programme fees vary depending on the type of programme, duration, and target group. Typically, student seminars range from UGX 10,000-20,000, while teacher training and school consultancy have customized pricing. Specific fees are listed on each programme's details page. Contact us for information about group discounts or school packages.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What payment methods does MTINDO accept?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Payment details and available methods are discussed during registration. Contact us via WhatsApp, phone or email to confirm payment methods and arrangements. We work with schools and individuals to ensure convenient payment options.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">Is there a refund policy?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Refund policies may vary depending on circumstances and when cancellation is requested. Contact MTINDO for specific details about our refund policy. We encourage early communication if you need to cancel or reschedule participation in a programme.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-title">Contact & Support</div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">How can I contact MTINDO?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>You can reach MTINDO through multiple channels: WhatsApp - 0785 492591; Phone - 0785 492591 or 0704 677414; Email - mtindoedusol@gmail.com. We also have a contact form on our website. For faster responses, we recommend WhatsApp or phone calls during business hours.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">How quickly will MTINDO respond to my inquiry?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>We aim to respond to WhatsApp messages and phone calls within a few hours during business days. Email inquiries typically receive responses within 24 hours. For urgent matters, we recommend contacting us via WhatsApp or phone for immediate assistance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-text">What if I have a question not answered here?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>If you have additional questions, feel free to contact us! Reach out via WhatsApp, phone, email, or fill out our contact form with your specific question. Our MTINDO team is here to help and will provide you with the information you need.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 MTINDO Educational Solutions. All Rights Reserved.</p>
+    <p style="margin-top: 8px;">We Are The Remedy — Providing solutions to the missing links in the corridor of excellence.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/256785492591?text=Hello%20MTINDO.%20I%20have%20a%20question%20about%20your%20programmes." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58zM12.06 18.4h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 0 1 10.2-8.3 6.55 6.55 0 0 1 1.94 4.66 6.6 6.6 0 0 1-6.54 6.73zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.14-.42.05-.2-.1-.83-.3-1.58-.97a5.9 5.9 0 0 1-1.1-1.36c-.11-.2 0-.3.09-.4.1-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.34h-.38c-.13 0-.34.05-.52.25-.18.2-.68.66-.68 1.6 0 .95.7 1.87.8 2 .1.13 1.37 2.1 3.33 2.94.47.2.83.32 1.11.42.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.17-.46.17-.86.12-.94-.05-.09-.18-.14-.38-.24z"/></svg>
+</a>
+
+<script>
+// FAQ Accordion functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', function() {
+    const faqItem = this.parentElement;
+    faqItem.classList.toggle('active');
+  });
+});
+</script>
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburgerBtn.addEventListener('click', function() {
+    mobileNav.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+  });
+
+  menuOverlay.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

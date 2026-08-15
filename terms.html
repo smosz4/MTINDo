@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions | MTINDO Educational Solutions</title>
+<link rel="icon" href="gg/WhatsApp_Image_2026-08-14_at_6.19.38_PM__1_-removebg-preview (1).png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0E2A54;
+    --navy-deep: #081b3a;
+    --red: #C4262E;
+    --gold: #E3A92C;
+    --paper: #F6F3EC;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A46;
+    --line: rgba(14,42,84,0.14);
+    --radius: 4px;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4{ font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); }
+  a{ color: var(--red); }
+  .wrap{ max-width: 900px; margin: 0 auto; padding: 0 28px; }
+  
+  .nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
+  }
+  .nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 66px;
+  }
+  .nav-brand{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    color: #fff;
+    font-size: 1.15rem;
+  }
+  .brand-logo{
+    width: 36px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  .nav-brand span{ color: var(--gold); }
+  .nav-links{
+    display:flex;
+    gap:20px;
+    align-items:center;
+  }
+  .nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:0.95rem;
+  }
+  .nav-links a:hover{ color: var(--gold); }
+
+  .hero-sub{
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 56px 0;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero-sub h1{
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  section{
+    padding: 64px 0;
+  }
+
+  h2{
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  h3{
+    font-size: 1.2rem;
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }
+
+  p{
+    margin-bottom: 14px;
+    color: var(--ink-soft);
+  }
+
+  ul, ol{
+    margin-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  li{
+    margin-bottom: 10px;
+    color: var(--ink-soft);
+  }
+
+  footer{
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.55);
+    padding: 30px 0;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .update-date{
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    padding: 16px;
+    background: #fff;
+    border-left: 3px solid var(--gold);
+  }
+  /* ---------- HAMBURGER MENU ---------- */
+  .hamburger-btn{
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 51;
+  }
+  .hamburger-btn:focus{ outline: none; }
+
+  .menu-overlay{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 48;
+  }
+  .menu-overlay.active{ display: block; }
+
+  .mobile-nav{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    padding-top: 80px;
+    overflow-y: auto;
+    z-index: 49;
+    transition: left 0.3s ease;
+  }
+  .mobile-nav.active{ left: 0; }
+  .mobile-nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.95rem;
+    transition: background 0.15s ease;
+    display: block;
+  }
+  .mobile-nav a:hover{ background: rgba(255,255,255,0.15); }
+  .mobile-nav .nav-cta{
+    background: var(--red);
+    margin: 16px 28px;
+    border: none;
+    padding: 12px 18px;
+    border-radius: var(--radius);
+  }
+
+  @media (max-width: 860px){
+    .hamburger-btn{ display: block; }
+    .nav-links{ display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img class="brand-logo" src="gg/WhatsApp_Image_2026-08-14_at_6.19.38_PM__1_-removebg-preview (1).png" alt="MTINDO logo">MTINDO<span>.</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="hero-sub">
+  <div class="wrap">
+    <h1>Terms & Conditions</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="update-date">
+      <strong>Last Updated:</strong> August 2026
+    </div>
+
+    <h2>Introduction</h2>
+    <p>
+      These Terms and Conditions ("Terms") govern your use of MTINDO Educational Solutions' website, services, and programmes. By accessing our website or registering for our programmes, you agree to comply with these Terms. If you do not agree with any part of these Terms, please do not use our services.
+    </p>
+
+    <h2>1. Use of Website</h2>
+    <h3>Permitted Use</h3>
+    <p>
+      You agree to use our website and services only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use and enjoyment. Prohibited behavior includes:
+    </p>
+    <ul>
+      <li>Harassing or causing distress or inconvenience</li>
+      <li>Obscene or offensive material</li>
+      <li>Disrupting the normal flow of dialogue</li>
+      <li>Attempting unauthorized access</li>
+      <li>Copying or reproducing content without permission</li>
+    </ul>
+
+    <h2>2. Programme Registration</h2>
+    <h3>Registration Process</h3>
+    <p>
+      To register for MTINDO programmes, you must provide accurate and complete information. You are responsible for maintaining the confidentiality of your registration details and password. You agree to notify us immediately of any unauthorized use of your account.
+    </p>
+
+    <h3>Eligibility</h3>
+    <p>
+      Each MTINDO programme has specific eligibility requirements (e.g., educational level, subject focus). Participants must meet the stated requirements. MTINDO reserves the right to decline registration if requirements are not met.
+    </p>
+
+    <h3>Registration Deadlines</h3>
+    <p>
+      Registration for programmes must be completed by the specified deadline. Late registrations may be accepted at MTINDO's discretion with potential additional fees.
+    </p>
+
+    <h2>3. Payments</h2>
+    <h3>Programme Fees</h3>
+    <p>
+      Programme fees are clearly stated at the time of registration. Payment is required to secure your place in the programme. Multiple payment methods may be available.
+    </p>
+
+    <h3>Payment Confirmation</h3>
+    <p>
+      Upon successful payment, you will receive confirmation. Keep this confirmation for your records and bring it to the programme event.
+    </p>
+
+    <h3>Late Payments</h3>
+    <p>
+      If payment is not received by the deadline, your registration may be cancelled. Contact MTINDO to discuss alternative arrangements if needed.
+    </p>
+
+    <h2>4. Cancellations & Refunds</h2>
+    <h3>Participant Cancellations</h3>
+    <p>
+      If you need to cancel your registration, notify MTINDO as soon as possible. Refund eligibility depends on when cancellation is requested relative to the programme date. Contact us for specific refund policy details.
+    </p>
+
+    <h3>MTINDO Cancellations</h3>
+    <p>
+      MTINDO reserves the right to cancel or reschedule programmes due to unforeseen circumstances (weather, emergencies, insufficient registrations, etc.). Participants will be notified as soon as possible and offered alternative arrangements or refunds.
+    </p>
+
+    <h2>5. Programme Conduct</h2>
+    <h3>Professional Behavior</h3>
+    <p>
+      All participants are expected to maintain professional and respectful conduct throughout MTINDO programmes. Disruptive behavior may result in removal from the programme without refund.
+    </p>
+
+    <h3>Health & Safety</h3>
+    <p>
+      Participants are responsible for their own health and safety. MTINDO takes reasonable precautions to ensure safe learning environments. Participants with specific health concerns should notify MTINDO before the programme.
+    </p>
+
+    <h3>Attendance</h3>
+    <p>
+      Regular attendance is expected for maximum benefit from programmes. Certificates may require minimum attendance levels.
+    </p>
+
+    <h2>6. Intellectual Property</h2>
+    <h3>Content Ownership</h3>
+    <p>
+      All materials provided during MTINDO programmes (presentations, handouts, resources) are the intellectual property of MTINDO and are provided for personal educational use only. Reproduction, distribution, or commercial use without permission is prohibited.
+    </p>
+
+    <h3>Participant Content</h3>
+    <p>
+      MTINDO may use participant work, photos, or videos for educational purposes and case studies, with appropriate permission obtained beforehand.
+    </p>
+
+    <h2>7. Liability</h2>
+    <h3>Limitation of Liability</h3>
+    <p>
+      MTINDO will not be liable for:
+    </p>
+    <ul>
+      <li>Any direct, indirect, incidental, or consequential damages</li>
+      <li>Loss of data, information, or expected results</li>
+      <li>Injuries or damages arising from programme participation</li>
+      <li>External factors beyond our control</li>
+    </ul>
+
+    <h2>8. Disputes & Complaints</h3>
+    <p>
+      If you have concerns or complaints about any MTINDO programme or service, please contact us immediately at:
+    </p>
+    <ul>
+      <li>Email: mtindoedusol@gmail.com</li>
+      <li>Phone: 0785 492591 / 0704 677414</li>
+      <li>WhatsApp: 0785 492591</li>
+    </ul>
+    <p>
+      We will investigate your concern and work to resolve the issue promptly.
+    </p>
+
+    <h2>9. Certificates & Recognition</h2>
+    <p>
+      Certificates of participation or completion may be issued to participants who meet programme requirements (attendance, payment, etc.). Certificates reflect participation and are not equivalent to formal academic qualifications.
+    </p>
+
+    <h2>10. Website Content</h2>
+    <h3>Accuracy</h3>
+    <p>
+      MTINDO strives to ensure website information is accurate and current. However, we do not warrant that all information is completely accurate, complete, or current. Information is subject to change without notice.
+    </p>
+
+    <h3>Updates</h3>
+    <p>
+      Programme dates, fees, venues, and other details may be updated. Check the website regularly or contact us for the latest information.
+    </p>
+
+    <h2>11. Termination of Access</h2>
+    <p>
+      MTINDO reserves the right to deny access to our website or programmes to anyone who violates these Terms or engages in inappropriate conduct.
+    </p>
+
+    <h2>12. Changes to Terms</h2>
+    <p>
+      MTINDO may update these Terms at any time. Continued use of our website and services constitutes acceptance of updated Terms. The "Last Updated" date indicates the most recent revision.
+    </p>
+
+    <h2>13. Governing Law</h2>
+    <p>
+      These Terms are governed by the laws of Uganda. Any legal action or proceeding shall be resolved according to Ugandan law.
+    </p>
+
+    <h2>14. Contact Information</h2>
+    <p>
+      For questions about these Terms and Conditions, contact us:
+    </p>
+    <ul>
+      <li><strong>Email:</strong> mtindoedusol@gmail.com</li>
+      <li><strong>Phone:</strong> 0785 492591 / 0704 677414</li>
+      <li><strong>WhatsApp:</strong> 0785 492591</li>
+      <li><strong>Location:</strong> Uganda</li>
+    </ul>
+
+    <p style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line);">
+      <strong>&copy; 2026 MTINDO Educational Solutions.</strong> We Are The Remedy.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 MTINDO Educational Solutions. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburgerBtn.addEventListener('click', function() {
+    mobileNav.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+  });
+
+  menuOverlay.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>

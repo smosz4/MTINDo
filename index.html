@@ -87,6 +87,11 @@
     justify-content:space-between;
     height: 66px;
   }
+  .desktop-nav{
+    display:flex;
+    gap:14px;
+    align-items:center;
+  }
   .nav-brand{
     font-family:'Fraunces', serif;
     font-weight:900;
@@ -657,11 +662,13 @@
   @media (max-width: 480px){
     .cover-mock{ width: 100%; }
     .cover-card{ max-width: 100%; }
+    .wa-float{ width: 52px; height: 52px; bottom: 16px; right: 16px; }
+    .wa-float svg{ width: 25px; height: 25px; }
   }
 
   @media (max-width: 860px){
     .hamburger-btn{ display: block; }
-    .nav .wrap > div:nth-child(2){ display: none; }
+    .desktop-nav{ display: none; }
     .hero-grid{ grid-template-columns: 1fr; }
     .cover-mock{ order:-1; margin-bottom: 24px; width: 100%; }
     .cover-card{ max-width: 100%; }
@@ -693,7 +700,7 @@
 <nav class="nav">
   <div class="wrap">
     <div class="nav-brand"><img class="brand-logo" src="gg/WhatsApp_Image_2026-08-14_at_6.19.38_PM__1_-removebg-preview (1).png" alt="MTINDO logo">MTINDO<span>.</span></div>
-    <div style="display:flex; gap:14px; align-items:center;">
+    <div class="desktop-nav">
       <a href="about.html" style="color:#fff; text-decoration:none; font-size:0.95rem;">About</a>
       <a href="services.html" style="color:#fff; text-decoration:none; font-size:0.95rem;">Services</a>
       <a href="programmes.html" style="color:#fff; text-decoration:none; font-size:0.95rem;">Programmes</a>
